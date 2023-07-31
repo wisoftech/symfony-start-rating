@@ -1,4 +1,16 @@
 {
+	"name": "wisoftech/symfony-start-rating",
+    "type": "library",
+    "description": "SymfonyStartRating is Star Rating Bundle for Symfony 6",
+    "homepage": "https://github.com/wisoftech/symfony-start-rating",
+	"license": "LGPL-2.1",
+	"authors": [
+        {
+            "name": "Wisoft Tech",
+            "homepage": "https://github.com/wisoftech"
+        }
+    ],
+
     "autoload": {
         "psr-4": {
             "Symfony\\StarRatingBundle\\": "src/"
@@ -8,5 +20,9 @@
         "psr-4": {
             "Symfony\\StarRatingBundle\\Tests\\": "tests/"
         }
+    },
+
+	"require": {
+        "php": "^7.1 || ^8.0"
     }
 }
