@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Twig;
+namespace Symfony\StarRatingBundle\Twig;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
