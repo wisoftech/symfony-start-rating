@@ -1,0 +1,29 @@
+{% block star_rating_widget %}
+	{% set rating = (value ? value:0)|number_format %}
+	<div data-rateyo-rating='{{rating}}' class='form-group' id="rateYo-{{ id }}"></div>
+	<input  {{ block('widget_attributes') -}} name="{{ full_name }}" id="{{ id }}" value="{{rating}}" hidden >
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+	<script type="text/javascript">
+		$("#rateYo-{{ id }}").rateYo({
+			normalFill: "#DEDEDE",
+			ratedFill: "#ea5a23",
+			rating: {{rating}},
+			fullStar: true,
+			maxValue: 5,
+			numStars: 5,
+			onSet: function (rating, rateYoInstance) {
+				$("#{{ id }}").val(rating>0 && rating<=5?rating:"");
+			},
+			"starSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"> <path d=\"M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z\"/></svg>"
+		}).css({
+			position : "relative",
+            overflow : "hidden",
+            cursor : "pointer"
+		}).find("div.jq-ry-rated-group").css({
+            position : "absolute",
+            top : 0,
+            left : 0
+        });
+	</script>
+{% endblock  %}
