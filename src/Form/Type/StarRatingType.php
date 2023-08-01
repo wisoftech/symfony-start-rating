@@ -19,7 +19,8 @@
 		public function configureOptions(OptionsResolver $resolver): void
 		{
 			$resolver->setDefaults([
-				'scale' => 2
+				'scale' => 2,
+				'attr' => ['class'=>'star_rating_type']
 			]);
 		}
 
